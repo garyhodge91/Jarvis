@@ -34,6 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		private static final String TABLE_ACTION_DEF = "ACTION_DEF";
 		private static final String KEY_CATEGORY = "CATEGORY";
 		private static final String KEY_TYPE = "TYPE";
+		private static final String KEY_DISPLAY_NAME = "DISPLAY_NAME";
 		
 	// Common keys
 		private static final String KEY_ID = "ID";
@@ -44,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 				+ " DATETIME, " + KEY_LAST_MODIFIED_DATE + " DATETIME, " + KEY_DESCRIPTION + "CHAR, " + KEY_IS_DELETED + " CHAR)"; 
 		
 		private static final String CREATE_TABLE_ACTION_DEF = "CREATE TABLE " + TABLE_ACTION_DEF + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-				+ KEY_CATEGORY + " TEXT, " + KEY_DESCRIPTION + " TEXT, " + KEY_TYPE +  " TEXT)"; 
+				+ KEY_CATEGORY + " TEXT, " + KEY_DESCRIPTION + " TEXT, " + KEY_TYPE +  " TEXT, " + KEY_DISPLAY_NAME + " TEXT) "; 
 		
 		private static final String CREATE_TABLE_ACTIONS = "CREATE TABLE " + TABLE_ACTION + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ KEY_ACTION_DEF_ID + " INTEGER, " + KEY_PARAM_1 + " TEXT, " + KEY_PARAM_2 + " TEXT, " + KEY_PARAM_3 + " TEXT, " + KEY_IS_DELETED + " CHAR, " + KEY_COMMAND_ID + 

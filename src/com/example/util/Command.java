@@ -1,4 +1,6 @@
-package com.example.jarvis;
+package com.example.util;
+
+import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,7 +14,8 @@ public class Command implements Parcelable {
 	private String utterance;
 	private String isActive;
 	private String isDeleted;
-	private String description;	
+	private String description;
+	private ArrayList<Action> actions;
 
 	public int getId() {
 		return id;
@@ -84,6 +87,15 @@ public class Command implements Parcelable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+
+	public ArrayList<Action> getActions() {
+		return actions;
+	}
+
+	public void setActions(ArrayList<Action> actions) {
+		this.actions = actions;
 	}
 
 	public Command createCommand(String title, String createdDate,

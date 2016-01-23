@@ -7,7 +7,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.jarvis.Command;
+import com.example.util.Command;
 
 public class CommandTableHelper {
 	
