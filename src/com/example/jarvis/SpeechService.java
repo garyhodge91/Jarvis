@@ -136,28 +136,30 @@ public class SpeechService extends RecognitionService {
 
 					str = str.substring(str.indexOf(" ") + 1);
 					Log.d(TAG, "str:" + str);
-					if (str.equals("vibrate")) {
-						Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-						vibrator.vibrate(2000); // vibrates the device for 2
-												// second
-					} else if (str.equals("text me")) {
-						SmsManager sms = SmsManager.getDefault();
-						sms.sendTextMessage("07795556166", null,
-								"I spoke this", null, null);
-					} else {
-						String query = "";
-						try {
-							query = URLEncoder.encode(str, "utf-8");
-						} catch (UnsupportedEncodingException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						String url = "http://www.google.com/search?q=" + query;
-						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setData(Uri.parse(url));
-						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						startActivity(intent);
-					}
+					CarryOutCommand command = new CarryOutCommand();
+					command.findCommands(str, getBaseContext());
+//					if (str.equals("vibrate")) {
+//						Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//						vibrator.vibrate(2000); // vibrates the device for 2
+//												// second
+//					} else if (str.equals("text me")) {
+//						SmsManager sms = SmsManager.getDefault();
+//						sms.sendTextMessage("07795556166", null,
+//								"I spoke this", null, null);
+//					} else {
+//						String query = "";
+//						try {
+//							query = URLEncoder.encode(str, "utf-8");
+//						} catch (UnsupportedEncodingException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//						String url = "http://www.google.com/search?q=" + query;
+//						Intent intent = new Intent(Intent.ACTION_VIEW);
+//						intent.setData(Uri.parse(url));
+//						intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//						startActivity(intent);
+//					}
 				}
 			}
 			listen();

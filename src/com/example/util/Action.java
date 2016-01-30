@@ -1,9 +1,12 @@
 package com.example.util;
 
-import com.example.actions.IActionDef;
+import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.actions.ActionDef;
+import com.example.actions.IActionDef;
 
 public class Action implements Parcelable{
 	private int id;
@@ -12,7 +15,7 @@ public class Action implements Parcelable{
 	private String param1;
 	private String param2;
 	private String param3;
-	private IActionDef actionDef;
+	private String actionDef;
 
 	public int getId() {
 		return id;
@@ -62,11 +65,11 @@ public class Action implements Parcelable{
 		this.param3 = param3;
 	}
 	
-	public IActionDef getActionDef() {
+	public String getActionDef() {
 		return actionDef;
 	}
 
-	public void setActionDef(IActionDef actionDef) {
+	public void setActionDef(String actionDef) {
 		this.actionDef = actionDef;
 	}
 
